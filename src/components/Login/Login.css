@@ -11,7 +11,7 @@ input:hover {
 
 input:focus {
   /* border: none !important; */
-  outline: 4px solid #bfdeff;
+  outline: 3px solid #bfdeff;
   transition: outline 0.1s ease;
   will-change: all;
 }
@@ -30,28 +30,38 @@ input::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 20px;
   margin-bottom: 1rem;
   flex-direction: column;
 }
 
 .icons {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  /* align-items: center; */
 }
 
 .icon {
-  /* margin: 0 10px; */
-  padding: 0.5rem 2.3rem;
-  border: 1px solid #d1d5db;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #dcdfe3;
   border-radius: 10px;
   cursor: pointer;
-  opacity: 0.8;
+  width: 29.5%;
+  padding: 0.95rem 0;
 }
 
 .icon img {
-  width: 25px;
-  height: 25px;
-  margin-top: 8px;
+  width: 22px;
+  height: 22px;
+  /* margin-top: 8px; */
+}
+
+#forgotPassword:hover {
+  color: #3862ba !important;
+  text-decoration: underline;
+  cursor: pointer;
 }
