@@ -25,14 +25,18 @@ ol {
 
 /* Set the base font size and line height */
 body {
-  font-family: Arial, sans-serif;
+  /* font-family: "'Open Sans', sans-serif"; */
   font-size: 16px;
   line-height: 1.5;
 }
 
+::-webkit-scrollbar {
+  width: 0px !important;
+}
 /* Remove underline from links */
 a {
-  text-decoration: none;
+  text-decoration: none !important;
+  color: inherit;
 }
 
 /* Remove the blue outline on focused elements (for accessibility) */

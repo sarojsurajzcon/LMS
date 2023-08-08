@@ -40,13 +40,13 @@ const ImageCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % 5); // Cycle from 0 to 4 and then restart at 0
-    }, 4000); 
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000);
 
-    return () => {
-      clearInterval(intervalId);
-    };
+    return () => clearInterval(interval);
   }, []);
 
   return (

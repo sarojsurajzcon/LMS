@@ -1,4 +1,15 @@
 export const ROUTES = {
   HOME: "/",
   LOGIN: "/login",
+  FEEDS: "/feeds",
+  TODO: "/todo",
+  SALARY: "/salary",
+  LEAVE_APPLY: "/leave-apply",
+  LEAVE_BALANCES: "/leave-balances",
+  LEAVE_CALENDAR: "/leave-calendar",
+  HOLIDAY_CALENDAR: "/holiday-calendar",
+  DOCUMENT_CENTER: "/document-center",
+  PEOPLE: "/people",
+  HELPDESK: "/helpdesk",
+  WORKFLOW_DELEGATES: "/workflow-delegates",
 };
