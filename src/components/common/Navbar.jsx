@@ -54,10 +54,17 @@ const Navbar = () => {
     location?.pathname == "/"
       ? "home"
       : location?.pathname.replace(/[^a-zA-Z0-9]+/g, " ");
-  const title = pathname
+
+  const uniqueTitle = pathname
     .split(" ")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
+    .map((word, index, arr) => {
+      if (arr.indexOf(word) === index) {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      }
+      return "";
+    })
+    .join(" ")
+    .trim();
 
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -130,7 +137,7 @@ const Navbar = () => {
             fontWeight: 400,
           }}
         >
-          {title}
+          {uniqueTitle}
         </Typography>
         <div>
           <div

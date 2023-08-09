@@ -39,6 +39,7 @@ a {
   color: inherit;
 }
 
+
 /* Remove the blue outline on focused elements (for accessibility) */
 :focus {
   outline: none;

@@ -13,11 +13,11 @@ const Home = lazy(() => import("../components/pages/Home"));
 const Feeds = lazy(() => import("../components/pages/Feeds"));
 const Todo = lazy(() => import("../components/pages/Todo"));
 const Salary = lazy(() => import("../components/pages/Salary"));
-const LeaveApply = lazy(() => import("../components/pages/LeaveApply"));
-const LeaveBalances = lazy(() => import("../components/pages/LeaveBalances"));
-const LeaveCalendar = lazy(() => import("../components/pages/LeaveCalendar"));
+const LeaveApply = lazy(() => import("../components/pages/Leave/LeaveApply"));
+const LeaveBalances = lazy(() => import("../components/pages/Leave/LeaveBalances"));
+const LeaveCalendar = lazy(() => import("../components/pages/Leave/LeaveCalendar"));
 const HolidayCalendar = lazy(() =>
-  import("../components/pages/HolidayCalendar")
+  import("../components/pages/Leave/HolidayCalendar")
 );
 const DocumentCenter = lazy(() => import("../components/pages/DocumentCenter"));
 const People = lazy(() => import("../components/pages/People"));
@@ -48,7 +48,7 @@ export default function RoutePath() {
   return (
     <div
       style={{
-        marginLeft: isSidebarOpen ? "200px" : "0", // Adjust the width based on your Sidebar width
+        marginLeft: isSidebarOpen&& location.pathname !== '/login' ? "200px" : "0", // Adjust the width based on your Sidebar width
       }}
     >
       {location.pathname !== LOGIN && <Navbar />}

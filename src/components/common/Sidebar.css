@@ -1,10 +1,11 @@
 .menuList {
   font-size: 0.75rem;
   padding: 0.7rem 0 !important;
-  margin: 0.7rem 0;
   padding-left: 1.5rem !important;
+  margin: 0.1rem 0;
   cursor: pointer;
   opacity: 0.69;
+  font-weight: 500;
 }
 .menuList img {
   margin-right: 1rem;
@@ -13,12 +14,11 @@
 .menuList:hover {
   opacity: 1;
   font-weight: 600;
-  color: #535e6d !important;
- 
+  color: #535e6d;
 }
 .active-list .menuList {
-  opacity: 1 ;
-  font-weight: 600 ;
-  color: rgb(14, 77, 178) ;
-  background-color: rgba(59,130,246,0.15) !important;
+  opacity: 1 !important;
+  font-weight: 600 !important;
+  color: rgb(14, 77, 178) !important;
+  background-color: rgba(59, 130, 246, 0.15) !important;
 }

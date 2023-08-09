@@ -59,10 +59,12 @@ const useStyles = makeStyles((theme) => ({
 
 const Sidebar = () => {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+  const [leaveOpen, setLeaveOpen] = React.useState(false);
+  const [todoOpen, setTodoOpen] = React.useState(false);
+  const [salaryOpen, setSalaryOpen] = React.useState(false);
 
   const handleClick = () => {
-    setOpen(!open);
+    setLeaveOpen(!leaveOpen);
   };
 
   return (
@@ -88,7 +90,7 @@ const Sidebar = () => {
         <div
           style={{
             margin: "0.5rem",
-            marginRight:'0.9rem'
+            marginRight: "0.9rem",
           }}
         >
           <Typography
@@ -117,7 +119,7 @@ const Sidebar = () => {
             style={{
               opacity: 0.8,
               transform: "rotate(30deg)",
-            //   marginLeft: "0.8rem",
+              //   marginLeft: "0.8rem",
             }}
           />
         </IconButton>
@@ -141,30 +143,31 @@ const Sidebar = () => {
             Feeds
           </ListItem>
         </NavLink>
-        <NavLink
-          to="/todo"
-          className={({ isActive }) => (isActive ? "active-list" : "")}
+        <ListItem
+          onClick={() => setTodoOpen((prev) => !prev)}
+          className="menuList"
+          sx={{
+            padding: "0.3rem 0 !important",
+            paddingLeft: todoOpen ? "1.4rem !important" : "1.65rem !important",
+            borderLeft: todoOpen ? "4px solid #3b82f6" : "",
+            margin: "0.5rem 0 !important",
+          }}
         >
-          <ListItem className="menuList">
-            <img src={todo} alt="todo" />
+          <img src={todo} alt="todo" />
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              paddingRight: "0.3rem",
+            }}
+          >
             To do
-          </ListItem>
-        </NavLink>
-        <NavLink
-          to="/salary"
-          className={({ isActive }) => (isActive ? "active-list" : "")}
-        >
-          <ListItem className="menuList">
-            <img src={salary} alt="salary" />
-            Salary
-          </ListItem>
-        </NavLink>
-        <ListItem onClick={handleClick} className="menuList">
-          <img src={leave} alt="leave" />
-          Leave
-          {open ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+            {todoOpen ? <ExpandLessIcon sx={{fontSize:'1.2rem'}} /> : <ExpandMoreIcon sx={{fontSize:'1.2rem'}} />}
+          </div>
         </ListItem>
-        <Collapse in={open} timeout="auto" unmountOnExit>
+        <Collapse in={todoOpen} timeout="auto" unmountOnExit>
           <List
             component="div"
             style={{
@@ -179,7 +182,177 @@ const Sidebar = () => {
             }}
           >
             <NavLink
-              to="/leave-apply"
+              to="/todo/review"
+              className={({ isActive }) => (isActive ? "active-list" : "")}
+            >
+              <ListItem className="menuList" style={{ margin: "0rem" }}>
+                Review
+              </ListItem>
+            </NavLink>
+          </List>
+        </Collapse>
+        <ListItem
+          onClick={() => setSalaryOpen((prev) => !prev)}
+          className="menuList"
+          sx={{
+            padding: "0.3rem 0 !important",
+            paddingLeft: salaryOpen
+              ? "1.05rem !important"
+              : "1.3rem !important",
+            borderLeft: salaryOpen ? "4px solid #3b82f6" : "",
+            margin: "0.5rem 0 !important",
+          }}
+        >
+          <img src={salary} alt="salary" />
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              paddingRight: "0.3rem",
+            }}
+          >
+            Salary
+            {salaryOpen ? (
+              <ExpandLessIcon sx={{ fontSize: "1.2rem" }} />
+            ) : (
+              <ExpandMoreIcon sx={{ fontSize: "1.2rem" }} />
+            )}
+          </div>
+        </ListItem>
+        <Collapse in={salaryOpen} timeout="auto" unmountOnExit>
+          <List
+            component="div"
+            style={{
+              borderLeft: "1px solid grey",
+              padding: 0,
+              margin: "0rem 0 0 2rem",
+              fontSize: "0.75rem",
+              opacity: 0.8,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+            }}
+          >
+            <NavLink
+              to="/salary/payslips"
+              className={({ isActive }) => (isActive ? "active-list" : "")}
+            >
+              <ListItem className="menuList" style={{ margin: "0rem" }}>
+                Payslips
+              </ListItem>
+            </NavLink>
+            <NavLink
+              to="/salary/ytd-reports"
+              className={({ isActive }) => (isActive ? "active-list" : "")}
+            >
+              <ListItem className="menuList" style={{ margin: "0rem" }}>
+                YTD Reports
+              </ListItem>
+            </NavLink>
+            <NavLink
+              to="/salary/ytd-reports"
+              className={({ isActive }) => (isActive ? "active-list" : "")}
+            >
+              <ListItem className="menuList" style={{ margin: "0rem" }}>
+                YTD Reports
+              </ListItem>
+            </NavLink>
+            <NavLink
+              to="/salary/it-statement"
+              className={({ isActive }) => (isActive ? "active-list" : "")}
+            >
+              <ListItem className="menuList" style={{ margin: "0rem" }}>
+                IT Statement
+              </ListItem>
+            </NavLink>
+            <NavLink
+              to="/salary/it-declaration"
+              className={({ isActive }) => (isActive ? "active-list" : "")}
+            >
+              <ListItem className="menuList" style={{ margin: "0rem" }}>
+                IT Declaration
+              </ListItem>
+            </NavLink>
+            <NavLink
+              to="/salary/loans-and-advances"
+              className={({ isActive }) => (isActive ? "active-list" : "")}
+            >
+              <ListItem className="menuList" style={{ margin: "0rem" }}>
+                Loans and Advances
+              </ListItem>
+            </NavLink>
+            <NavLink
+              to="/salary/reimbursement"
+              className={({ isActive }) => (isActive ? "active-list" : "")}
+            >
+              <ListItem className="menuList" style={{ margin: "0rem" }}>
+                Reimbursement
+              </ListItem>
+            </NavLink>
+            <NavLink
+              to="/salary/proof-of-investment"
+              className={({ isActive }) => (isActive ? "active-list" : "")}
+            >
+              <ListItem className="menuList" style={{ margin: "0rem" }}>
+                Proof Of Investment
+              </ListItem>
+            </NavLink>
+            <NavLink
+              to="/salary/salary-revision"
+              className={({ isActive }) => (isActive ? "active-list" : "")}
+            >
+              <ListItem className="menuList" style={{ margin: "0rem" }}>
+                Salary Revision
+              </ListItem>
+            </NavLink>
+          </List>
+        </Collapse>
+        <ListItem
+          onClick={handleClick}
+          className="menuList"
+          sx={{
+            padding: "0.3rem 0 !important",
+            paddingLeft: leaveOpen ? "1.25rem !important" : "1.5rem !important",
+            borderLeft: leaveOpen ? "4px solid #3b82f6" : "",
+            margin: "0.5rem 0 !important",
+          }}
+        >
+          <img src={leave} alt="leave" />
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              paddingRight: "0.3rem",
+            }}
+          >
+            Leave
+            {leaveOpen ? (
+              <ExpandLessIcon sx={{ fontSize: "1.2rem" }} />
+            ) : (
+              <ExpandMoreIcon sx={{ fontSize: "1.2rem" }} />
+            )}
+          </div>
+        </ListItem>
+        <Collapse in={leaveOpen} timeout="auto" unmountOnExit>
+          <List
+            component="div"
+            style={{
+              borderLeft: "1px solid grey",
+              padding: 0,
+              margin: "0rem 0 0 2rem",
+              fontSize: "0.75rem",
+              opacity: 0.8,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+            }}
+          >
+            <NavLink
+              to="/leave/leave-apply"
               className={({ isActive }) => (isActive ? "active-list" : "")}
             >
               <ListItem className="menuList" style={{ margin: "0rem" }}>
@@ -187,7 +360,7 @@ const Sidebar = () => {
               </ListItem>
             </NavLink>
             <NavLink
-              to="/leave-balances"
+              to="/leave/leave-balances"
               className={({ isActive }) => (isActive ? "active-list" : "")}
             >
               <ListItem className="menuList" style={{ margin: "0rem" }}>
@@ -195,7 +368,7 @@ const Sidebar = () => {
               </ListItem>
             </NavLink>
             <NavLink
-              to="/leave-calendar"
+              to="/leave/leave-calendar"
               className={({ isActive }) => (isActive ? "active-list" : "")}
             >
               <ListItem className="menuList" style={{ margin: "0rem" }}>
@@ -203,7 +376,7 @@ const Sidebar = () => {
               </ListItem>
             </NavLink>
             <NavLink
-              to="/holiday-calendar"
+              to="/leave/holiday-calendar"
               className={({ isActive }) => (isActive ? "active-list" : "")}
             >
               <ListItem className="menuList" style={{ margin: "0rem" }}>
