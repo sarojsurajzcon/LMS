@@ -1,0 +1,22 @@
+.leave-apply-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 2rem 0;
+}
+.leave-apply-header .action-btn {
+  padding: 0.2rem 2rem;
+  background-color: white;
+  text-transform: none;
+  color: rgb(193, 191, 191);
+  font-size: 13px !important;
+  box-shadow: none;
+  width: 7rem;
+  border: 1px solid rgb(198, 194, 194);
+}
+
+.leavy-apply-main-link button {
+  background-color: #24a7f8 !important;
+  color: white !important;
+}

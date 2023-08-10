@@ -20,8 +20,7 @@ const FormContainer = styled(Box)(({ theme }) => ({
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
-  padding: "1.6rem",
-  borderRadius: "10px",
+  
   boxShadow: "0 12px 34px 0 rgba(57,67,87,0.1)",
   margin: "1rem !important",
   marginTop: "2rem !important",
@@ -97,19 +96,27 @@ const Login = () => {
       display="flex"
       alignItems="center"
       justifyContent="center"
-      minHeight="100vh"
+      width="100%"
+      height="100vh"
       padding="0 1rem"
       paddingBottom="60px"
     >
-      <FormContainer>
+      {/* <FormContainer> */}
         <form
           onSubmit={handleSubmit}
           style={{
             width: "100%",
+            maxWidth: "380px",
+            backgroundColor: "white",
+            padding:'1.6rem',
             display: "flex",
-            justifyContent: "center",
             flexDirection: "column",
             alignItems: "center",
+            justifyContent: "center",
+            borderRadius:'10px',
+            boxShadow: "0 12px 34px 0 rgba(57,67,87,0.1)",
+            margin: "1rem !important",
+            marginTop: "2rem !important",
           }}
         >
           <header style={{ marginBottom: "0.2rem" }}>
@@ -354,7 +361,7 @@ const Login = () => {
             </>
           )}
         </form>
-      </FormContainer>
+      {/* </FormContainer> */}
       <ImageCarousel />
       <Footer />
     </Box>

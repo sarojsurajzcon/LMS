@@ -1,0 +1,20 @@
+
+.leave-menu-list {
+    font-size: 0.73rem;
+    padding: 0.3rem 0 !important;
+    padding-left: 1.5rem !important;
+    margin: 0.1rem 0;
+    cursor: pointer;
+    opacity: 0.69;
+    font-weight: 500;
+  }
+  .leave-menu-list:hover {
+    opacity: 1;
+  }
+  
+  .leave-nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  

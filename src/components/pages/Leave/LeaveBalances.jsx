@@ -56,8 +56,8 @@ const LeaveBalances = () => {
           )}
         />
       </section>
-      <section class="container">
-        <div class="box">
+      <section className="container">
+        <div className="box">
           <div className="container-header">
             <span>Loss Of Pay</span>
             <span>Granted:0</span>
@@ -67,7 +67,7 @@ const LeaveBalances = () => {
             <p style={{fontSize:'12px'}}>Balance</p>
           </div>
         </div>
-        <div class="box">
+        <div className="box">
           <div className="container-header">
             <span>Emergency Leave</span>
             <span>Granted:0</span>
@@ -77,7 +77,7 @@ const LeaveBalances = () => {
             <p style={{fontSize:'12px'}}>Balance</p>
           </div>
         </div>
-        <div class="box">
+        <div className="box">
           <div className="container-header">
             <span>Consolidated Leave</span>
             <span>Granted:0</span>

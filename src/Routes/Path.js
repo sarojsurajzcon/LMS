@@ -4,7 +4,7 @@ export const ROUTES = {
   FEEDS: "/feeds",
   TODO: "/todo/review",
   SALARY: "/salary",
-  LEAVE_APPLY: "/leave/leave-apply",
+  LEAVE_APPLY: "/leave/leave-apply/*",
   LEAVE_BALANCES: "/leave/leave-balances",
   LEAVE_CALENDAR: "/leave/leave-calendar",
   HOLIDAY_CALENDAR: "/leave/holiday-calendar",

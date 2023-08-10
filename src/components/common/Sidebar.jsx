@@ -147,7 +147,7 @@ const Sidebar = () => {
           onClick={() => setTodoOpen((prev) => !prev)}
           className="menuList"
           sx={{
-            padding: "0.3rem 0 !important",
+            padding: "0.29rem 0 !important",
             paddingLeft: todoOpen ? "1.4rem !important" : "1.65rem !important",
             borderLeft: todoOpen ? "4px solid #3b82f6" : "",
             margin: "0.5rem 0 !important",
@@ -164,7 +164,11 @@ const Sidebar = () => {
             }}
           >
             To do
-            {todoOpen ? <ExpandLessIcon sx={{fontSize:'1.2rem'}} /> : <ExpandMoreIcon sx={{fontSize:'1.2rem'}} />}
+            {todoOpen ? (
+              <ExpandLessIcon sx={{ fontSize: "1.2rem" }} />
+            ) : (
+              <ExpandMoreIcon sx={{ fontSize: "1.2rem" }} />
+            )}
           </div>
         </ListItem>
         <Collapse in={todoOpen} timeout="auto" unmountOnExit>
@@ -241,14 +245,6 @@ const Sidebar = () => {
             >
               <ListItem className="menuList" style={{ margin: "0rem" }}>
                 Payslips
-              </ListItem>
-            </NavLink>
-            <NavLink
-              to="/salary/ytd-reports"
-              className={({ isActive }) => (isActive ? "active-list" : "")}
-            >
-              <ListItem className="menuList" style={{ margin: "0rem" }}>
-                YTD Reports
               </ListItem>
             </NavLink>
             <NavLink
