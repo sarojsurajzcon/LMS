@@ -66,7 +66,12 @@ export default function LeaveHistory() {
             <section className="details-box">
               <p>
                 <span>Duration :</span>
-                <span> 31 jul 2023 (Session 1) to 31 jul 2023 (Session 1)</span>
+                <span>
+                  <b>31 jul 2023 </b>
+                  (Session 1) to
+                  <b>31 jul 2023 </b>
+                  (Session 1)
+                </span>
               </p>
               <p>
                 <span>Reason :</span>

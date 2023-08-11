@@ -1,0 +1,146 @@
+.view-details-box {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  background-color: white;
+  outline: 1px solid #d0c5c5;
+  margin: 1.5rem;
+  margin-bottom: 0;
+  padding: 1rem 1.5rem;
+}
+
+.view-details-box .date-box {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  width: 100%;
+  max-width: 420px;
+  background-color: #ffffe8;
+  outline: 1px solid rgb(201, 196, 196);
+  border-radius: 5px;
+  margin-top: 2rem;
+}
+.view-details-box .date-box div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  padding: 0.6rem;
+  padding-left: 1.2rem;
+}
+.view-details-box .date-box div:nth-child(3) {
+  border-left: 1px solid rgb(201, 196, 196);
+  height: 80%;
+}
+.view-details-box .date-box div p:nth-child(1) {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #92a1ad;
+}
+.view-details-box .date-box div p:nth-child(2) {
+  font-weight: 600;
+}
+.view-details-box .date-box div p:nth-child(3) {
+  font-size: 0.75rem;
+  color: #92a1ad;
+  font-weight: 600;
+}
+
+.balance-box {
+  margin: 0.5rem;
+}
+.balance-box span {
+  color: #92a1ad;
+  margin-right: 2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.balance-box span:nth-child(1) {
+  color: #36434e;
+  margin-right: 2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.details-summary {
+  display: flex;
+  width: 95%;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid #d0c5c5;
+  margin: 0 1.5rem;
+  padding: 1rem 1.5rem;
+}
+
+.details-summary dt {
+  width: 110px;
+  text-align: left;
+  font-size: 14px;
+  white-space: nowrap;
+  color: #90a3ba;
+}
+.details-summary dd {
+  margin-left: 120px;
+  font-size: 14px;
+  color: #3b4452;
+  word-break: break-all;
+  margin-top: -20px;
+}
+.details-container {
+  display: flex;
+}
+
+.details-container .timeline {
+  display: flex;
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  min-height: 300px;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid #d0c5c5;
+  margin: 1.5rem 0.5rem;
+  padding: 1rem 1.5rem;
+}
+.details-container .timeline div p {
+  font-size: 12px;
+}
+.details-container .timeline div p:nth-child(2) {
+  font-size: 12px;
+  color: #9ba4aa;
+}
+
+.details-container .timeline div span {
+  font-size: 10px;
+  color: #8d989f;
+}
+
+.timeline-div {
+  border-left: 1px solid #7f8fa4;
+  padding-left: 20px;
+  height: 100px;
+}
+.dot::before {
+  content: "⬤";
+  font-size: 13px;
+  position: relative;
+  left: -26px;
+  top: -9px;
+  color: #7f8fa4;
+  z-index: 1000;
+}
+.dot2::before {
+  content: "⬤";
+  font-size: 13px;
+  position: relative;
+  left: -26px;
+  top: 26px;
+  color: #7f8fa4;
+  z-index: 1000;
+}
+
+
+.dot2 div {
+  margin-top: -5px;
+}

@@ -1,59 +1,59 @@
 .leave-history-container {
-    /* margin-top: 3rem; */
-    margin: 1.5rem;
-  }
-  
-  .leave-history-container .title-box {
-    margin: 0 0.35rem;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-  
-  .accordion-container {
-    box-shadow: none;
-    outline: 1px solid #d8dfe7;
-    background-color: white;
-  }
-  .accordion-container:hover, .accordion-container:active {
-    box-shadow: none;
-    outline: 1px solid #24a7f8;
-    background-color: white;
-  }
-  
-  .accordion-title {
-    font-size: 0.8rem !important;
-    color: #7f8fa4;
-  }
-  .accordion-subtitle {
-    font-size: 0.9rem !important;
-    color: #666;
-  }
-  
-  .accordion-details {
-    outline: 1px solid #d8dfe7 !important;
-    margin-top: -0.5rem;
-    width: 100%;
-  }
-  
-  .accordion-details .details-box {
-    padding: 1rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .details-box p span:first-child {
-    font-size: 12px !important;
-    margin-right: 5px !important;
-    font-weight: 600 !important;
-    color: #7f8fa4 !important;
-    flex: 0 0 70px !important;
-  }
-  .details-box p span:nth-child(2) {
-    font-size: 12px !important;
-  }
-  
-  .details-box p:nth-child(2) span:first-child {
-    margin-right: 20px;
-  }
-  
+  margin: 1.5rem auto;
+  width: 70%;
+}
+
+.leave-history-container .title-box {
+  margin: 0 0.35rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.accordion-container {
+  box-shadow: none;
+  outline: 1px solid #d8dfe7;
+  background-color: white;
+}
+.accordion-container:hover,
+.accordion-container:active {
+  box-shadow: none;
+  outline: 1px solid #24a7f8;
+  background-color: white;
+}
+
+.accordion-title {
+  font-size: 0.8rem !important;
+  color: #7f8fa4;
+}
+.accordion-subtitle {
+  font-size: 0.9rem !important;
+  color: #666;
+}
+
+.accordion-details {
+  outline: 1px solid #d8dfe7 !important;
+  margin-top: -0.5rem;
+  width: 100%;
+}
+
+.accordion-details .details-box {
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.details-box p span:first-child {
+  font-size: 12px !important;
+  margin-right: 5px !important;
+  font-weight: 600 !important;
+  color: #7f8fa4 !important;
+  flex: 0 0 70px !important;
+}
+.details-box p span:nth-child(2) {
+  font-size: 12px !important;
+}
+
+.details-box p:nth-child(2) span:first-child {
+  margin-right: 20px;
+}

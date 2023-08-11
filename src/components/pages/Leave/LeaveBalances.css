@@ -36,24 +36,29 @@
 }
 
 .inner-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    height: 160px;
-    color: #879ab0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 160px;
+  color: #879ab0;
 }
 
 .box {
   width: 23.5%;
   min-width: 250px;
-  border: 1px solid #9794a4;
+  outline: 1px solid #9794a4;
   border-radius: 5px;
   margin: 10px;
   font-size: 18px;
   background-color: white;
 }
 
+.box:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0.14) 0px 0px 5px 0px, rgba(0, 0, 0, 0.12) 0px 4px 20px 0px;
+    outline: none;
+}
 @media (max-width: 768px) {
   .box {
     width: calc(50% - 20px); /* Two boxes in one row */

@@ -13,7 +13,9 @@ const Home = lazy(() => import("../components/pages/Home"));
 const Feeds = lazy(() => import("../components/pages/Feeds"));
 const Todo = lazy(() => import("../components/pages/Todo"));
 const Salary = lazy(() => import("../components/pages/Salary"));
-const LeaveApply = lazy(() => import("../components/pages/Leave/Leave Apply/LeaveApply"));
+const LeaveApply = lazy(() =>
+  import("../components/pages/Leave/Leave Apply/LeaveApply")
+);
 const LeaveBalances = lazy(() =>
   import("../components/pages/Leave/LeaveBalances")
 );
@@ -55,7 +57,10 @@ export default function RoutePath() {
         marginLeft:
           isSidebarOpen && location.pathname !== "/login" ? "200px" : "0", // Adjust the width based on your Sidebar width
         backgroundColor: "rgb(247, 247, 247)",
-        height: "100vh",
+        height: "160vh",
+        paddingBottom: "2rem",
+        // display:'flex',
+        // flexDirection:'column',
       }}
     >
       {location.pathname !== LOGIN && <Navbar />}

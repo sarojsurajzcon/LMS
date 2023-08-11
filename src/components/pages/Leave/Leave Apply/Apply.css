@@ -1,20 +1,152 @@
-
 .leave-menu-list {
-    font-size: 0.73rem;
-    padding: 0.3rem 0 !important;
-    padding-left: 1.5rem !important;
-    margin: 0.1rem 0;
-    cursor: pointer;
-    opacity: 0.69;
-    font-weight: 500;
-  }
-  .leave-menu-list:hover {
-    opacity: 1;
-  }
-  
-  .leave-nav {
-    display: flex;
-    flex-direction: column;
-  }
+  font-size: 0.73rem;
+  padding: 0.3rem 0 !important;
+  padding-left: 1.5rem !important;
+  margin: 0.1rem 0;
+  cursor: pointer;
+  opacity: 0.69;
+  font-weight: 500;
+}
+.leave-menu-list:hover {
+  opacity: 1;
+}
 
+.leave-nav {
+  display: flex;
+  flex-direction: column;
+  width: 18%;
+  margin-top: -0.5rem;
+}
+
+.leave-nav .active {
+  color: #34414c;
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 1;
+}
+.leave-nav .active::before {
+  content: "";
+  position: absolute;
+  top: 1;
+  left: 10px;
+  height: 60%;
+  width: 2px; /* Adjust the width as needed */
+  background-color: #34414c; /* Adjust the color as needed */
+}
+
+.apply-container {
+  outline: 1px solid #92a5bb;
+  width: 70%;
+  margin: 0 1rem;
+  background-color: white;
+  padding: 0.8rem 1.2rem;
+}
+
+@media (max-width: 767px) {
+  .apply-container {
+    width: 95%; /* Adjust width as needed for small screens */
+    margin: 1.5rem 1rem; /* Adjust margin as needed for spacing */
+  }
+}
+
+.apply-container .hide-btn {
+  color: rgba(59, 130, 246);
+  font-weight: 500;
+  font-size: 0.75rem;
+  margin: 0 0.15rem;
+  cursor: pointer;
+}
+.apply-container .hide-btn:hover {
+  text-decoration: underline;
+}
+
+.apply-container .select-input > option {
+  text-indent: 10px;
+}
+
+.apply-container .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 0.5rem 0.3rem;
+  font-size: 0.8rem;
+}
+
+.apply-container form label {
+  margin-top: 1.5rem;
+  margin-bottom: 0.3rem;
+  color: #7f8fa4;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.apply-container
+  .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 0.35rem 0.3rem;
+  font-size: 0.8rem;
+}
+.textarea
+  .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 1.35rem 0.3rem;
+  font-size: 0.8rem;
+}
+
+.apply-container .input-div {
+  width: 100%;
+  max-width: 250px;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.apply-container form {
+  display: flex;
+  width: 100%;
+}
+
+.input-div-container {
+  display: flex;
+  width: 100%;
+}
+
+.balance-apply-container {
+  display: flex;
+  width: 25%;
+  white-space: nowrap;
+}
+.balance-apply-container div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #7f8fa4;
+  font-size: 0.75rem;
+  font-weight: 600;
+  /* border-left: 1px solid #cbd5e1; */
+  padding-left: 10px;
+}
+.balance-apply-container div span {
+  /* border-left: 2px solif #7f8fa4; */
+  padding-left: 10px;
+  border-left: 1px solid #7f8fa4;
+}
+
+.apply-container .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 0.4rem 0.3rem;
+}
+
+.submit-action-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2.5rem 0 0 0;
+}
+.submit-action-container button{
+  padding: 0.2rem 2rem;
+  background-color: white;
+  text-transform: none;
+  color: rgb(193, 191, 191);
+  font-size: 13px !important;
+  box-shadow: none;
+  width: 7rem;
+  margin: 0 0.3rem;
+  /* border: 1px solid rgb(198, 194, 194); */
   
+}
