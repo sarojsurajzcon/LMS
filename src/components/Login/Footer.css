@@ -5,10 +5,13 @@
   text-align: center;
   padding: 20px 0;
 }
-.transparent-footer a {
-  color: white;
+
+.transparent-footer a, span {
   text-decoration: none;
+  color: #7f8fa4;
+  font-size: 8.9px;
 }
+
 .transparent-footer a:hover {
   text-decoration: underline;
 }

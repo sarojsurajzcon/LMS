@@ -1,15 +1,9 @@
 import React, { useEffect } from "react";
 import { Button } from "@mui/material";
 import "./LeaveApply.css";
-import {
-  NavLink,
-  Route,
-  Routes,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import LeaveHistory from "./LeaveHistory";
-import Apply from "./Apply";
+import Apply from "./Apply/Apply";
 
 export default function LeaveApply() {
   const location = useLocation();

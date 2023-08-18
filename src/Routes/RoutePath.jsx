@@ -8,6 +8,7 @@ import Navbar from "../components/common/Navbar";
 import Sidebar from "../components/common/Sidebar";
 import { useSelector } from "react-redux";
 
+// Lazy-loaded components
 const Login = lazy(() => import("../components/Login/Login"));
 const Home = lazy(() => import("../components/pages/Home"));
 const Feeds = lazy(() => import("../components/pages/Feeds"));
@@ -32,6 +33,10 @@ const WorkflowDelegates = lazy(() =>
   import("../components/pages/WorkflowDelegates")
 );
 
+const LeaveHistoryDetails = lazy(() =>
+  import("../components/pages/Leave/Leave Apply/LeaveHistoryDetails")
+);
+
 export default function RoutePath() {
   const {
     HOME,
@@ -40,6 +45,7 @@ export default function RoutePath() {
     TODO,
     SALARY,
     LEAVE_APPLY,
+    Leave_HISTORY_DETAILS,
     LEAVE_BALANCES,
     LEAVE_CALENDAR,
     HOLIDAY_CALENDAR,
@@ -49,22 +55,27 @@ export default function RoutePath() {
     WORKFLOW_DELEGATES,
   } = ROUTES;
   const location = useLocation();
+
+  // Check if sidebar is open from Redux store
   const isSidebarOpen = useSelector((state) => state.common.isSidebarOpen);
 
   return (
     <div
       style={{
         marginLeft:
-          isSidebarOpen && location.pathname !== "/login" ? "200px" : "0", // Adjust the width based on your Sidebar width
+          isSidebarOpen && location.pathname !== "/login" ? "200px" : "0",
         backgroundColor: "rgb(247, 247, 247)",
         height: "160vh",
         paddingBottom: "2rem",
-        // display:'flex',
-        // flexDirection:'column',
       }}
     >
+      {/* Render Navbar if not on the login page */}
       {location.pathname !== LOGIN && <Navbar />}
+
+      {/* Render Sidebar if not on the login page and sidebar is open */}
       {location.pathname !== LOGIN && isSidebarOpen && <Sidebar />}
+
+      {/* Use suspense for lazy loading */}
       <Suspense fallback={<AppLoader />}>
         <Routes>
           <Route path={LOGIN} element={<Login />} />
@@ -73,6 +84,10 @@ export default function RoutePath() {
           <Route path={TODO} element={<Todo />} />
           <Route path={SALARY} element={<Salary />} />
           <Route path={LEAVE_APPLY} element={<LeaveApply />} />
+          <Route
+            path={Leave_HISTORY_DETAILS}
+            element={<LeaveHistoryDetails />}
+          />
           <Route path={LEAVE_CALENDAR} element={<LeaveCalendar />} />
           <Route path={HOLIDAY_CALENDAR} element={<HolidayCalendar />} />
           <Route path={DOCUMENT_CENTER} element={<DocumentCenter />} />

@@ -1,14 +1,10 @@
 import React from "react";
 import { makeStyles } from "@mui/styles";
 import Drawer from "@mui/material/Drawer";
-import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import SettingsIcon from "@mui/icons-material/Settings";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
 import List from "@mui/material/List";
 import Collapse from "@mui/material/Collapse";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
@@ -32,28 +28,24 @@ const useStyles = makeStyles((theme) => ({
     width: 200,
     flexShrink: 0,
   },
+
   drawerPaper: {
     width: 200,
-    // overflow:'hidden'
   },
   //   toolbar: theme.mixins.toolbar,
   profileSection: {
     display: "flex",
     padding: "0 0 0 1rem",
     alignItems: "center",
-    // padding: theme.spacing(2),
   },
+
   avatar: {
-    // width: theme.spacing(10),
-    // height: theme.spacing(10),
     fontSize: "2.5rem !important",
     borderRadius: "100% !important",
   },
+
   settingsButton: {
     marginLeft: "auto",
-  },
-  nested: {
-    // paddingLeft: theme.spacing(4),
   },
 }));
 
@@ -63,7 +55,18 @@ const Sidebar = () => {
   const [todoOpen, setTodoOpen] = React.useState(false);
   const [salaryOpen, setSalaryOpen] = React.useState(false);
 
-  const handleClick = () => {
+  // Function to handle click on the "To do" section
+  const handleTodoClick = () => {
+    setTodoOpen(!todoOpen);
+  };
+
+  // Function to handle click on the "Salary" section
+  const handleSalaryClick = () => {
+    setSalaryOpen(!salaryOpen);
+  };
+
+  // Function to handle click on the "Leave" section
+  const handleLeaveClick = () => {
     setLeaveOpen(!leaveOpen);
   };
 
@@ -75,53 +78,26 @@ const Sidebar = () => {
         paper: classes.drawerPaper,
       }}
     >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "start",
-          alignItems: "center",
-          margin: "1rem",
-        }}
-      >
+      <div className="logo-box">
         <img src={zcon} alt="zcon" width="65%" />
       </div>
       <div className={classes.profileSection}>
         <PersonIcon className={classes.avatar} />
-        <div
-          style={{
-            margin: "0.5rem",
-            marginRight: "0.9rem",
-          }}
-        >
+        <div className="profile-box">
           <Typography
             style={{
               fontSize: "0.9rem",
-              fontFamily: "'Open Sans', sans-serif",
             }}
             variant="h6"
           >
             Hi SURAJ
           </Typography>
-          <Link
-            style={{
-              fontSize: "0.75rem",
-              fontWeight: "500",
-              color: "rgba(59,130,246,0.95)",
-            }}
-            to="/my-info"
-          >
+          <Link className="profile-view-info" to="/my-info">
             View My Info
           </Link>
         </div>
         <IconButton>
-          <SettingsOutlinedIcon
-            fontSize="small"
-            style={{
-              opacity: 0.8,
-              transform: "rotate(30deg)",
-              //   marginLeft: "0.8rem",
-            }}
-          />
+          <SettingsOutlinedIcon fontSize="small" className="setting-icon" />
         </IconButton>
       </div>
       <List>
@@ -144,7 +120,7 @@ const Sidebar = () => {
           </ListItem>
         </NavLink>
         <ListItem
-          onClick={() => setTodoOpen((prev) => !prev)}
+          onClick={handleTodoClick}
           className="menuList"
           sx={{
             padding: "0.29rem 0 !important",
@@ -154,15 +130,7 @@ const Sidebar = () => {
           }}
         >
           <img src={todo} alt="todo" />
-          <div
-            style={{
-              width: "100%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              paddingRight: "0.3rem",
-            }}
-          >
+          <div className="todo-list-box">
             To do
             {todoOpen ? (
               <ExpandLessIcon sx={{ fontSize: "1.2rem" }} />
@@ -189,33 +157,23 @@ const Sidebar = () => {
               to="/todo/review"
               className={({ isActive }) => (isActive ? "active-list" : "")}
             >
-              <ListItem className="menuList" style={{ margin: "0rem" }}>
+              <ListItem className="menuList" >
                 Review
               </ListItem>
             </NavLink>
           </List>
         </Collapse>
         <ListItem
-          onClick={() => setSalaryOpen((prev) => !prev)}
-          className="menuList"
+          onClick={handleSalaryClick}
+          className={`menuList ${salaryOpen ? "pl-1" : "pl-2"}`}
           sx={{
-            padding: "0.3rem 0 !important",
-            paddingLeft: salaryOpen
-              ? "1.05rem !important"
-              : "1.3rem !important",
             borderLeft: salaryOpen ? "4px solid #3b82f6" : "",
             margin: "0.5rem 0 !important",
           }}
         >
           <img src={salary} alt="salary" />
           <div
-            style={{
-              width: "100%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              paddingRight: "0.3rem",
-            }}
+            className="salary-list-box"
           >
             Salary
             {salaryOpen ? (
@@ -243,7 +201,7 @@ const Sidebar = () => {
               to="/salary/payslips"
               className={({ isActive }) => (isActive ? "active-list" : "")}
             >
-              <ListItem className="menuList" style={{ margin: "0rem" }}>
+              <ListItem className="menuList" >
                 Payslips
               </ListItem>
             </NavLink>
@@ -251,7 +209,7 @@ const Sidebar = () => {
               to="/salary/ytd-reports"
               className={({ isActive }) => (isActive ? "active-list" : "")}
             >
-              <ListItem className="menuList" style={{ margin: "0rem" }}>
+              <ListItem className="menuList" >
                 YTD Reports
               </ListItem>
             </NavLink>
@@ -259,7 +217,7 @@ const Sidebar = () => {
               to="/salary/it-statement"
               className={({ isActive }) => (isActive ? "active-list" : "")}
             >
-              <ListItem className="menuList" style={{ margin: "0rem" }}>
+              <ListItem className="menuList" >
                 IT Statement
               </ListItem>
             </NavLink>
@@ -267,7 +225,7 @@ const Sidebar = () => {
               to="/salary/it-declaration"
               className={({ isActive }) => (isActive ? "active-list" : "")}
             >
-              <ListItem className="menuList" style={{ margin: "0rem" }}>
+              <ListItem className="menuList" >
                 IT Declaration
               </ListItem>
             </NavLink>
@@ -275,7 +233,7 @@ const Sidebar = () => {
               to="/salary/loans-and-advances"
               className={({ isActive }) => (isActive ? "active-list" : "")}
             >
-              <ListItem className="menuList" style={{ margin: "0rem" }}>
+              <ListItem className="menuList" >
                 Loans and Advances
               </ListItem>
             </NavLink>
@@ -283,7 +241,7 @@ const Sidebar = () => {
               to="/salary/reimbursement"
               className={({ isActive }) => (isActive ? "active-list" : "")}
             >
-              <ListItem className="menuList" style={{ margin: "0rem" }}>
+              <ListItem className="menuList" >
                 Reimbursement
               </ListItem>
             </NavLink>
@@ -291,7 +249,7 @@ const Sidebar = () => {
               to="/salary/proof-of-investment"
               className={({ isActive }) => (isActive ? "active-list" : "")}
             >
-              <ListItem className="menuList" style={{ margin: "0rem" }}>
+              <ListItem className="menuList" >
                 Proof Of Investment
               </ListItem>
             </NavLink>
@@ -299,14 +257,14 @@ const Sidebar = () => {
               to="/salary/salary-revision"
               className={({ isActive }) => (isActive ? "active-list" : "")}
             >
-              <ListItem className="menuList" style={{ margin: "0rem" }}>
+              <ListItem className="menuList" >
                 Salary Revision
               </ListItem>
             </NavLink>
           </List>
         </Collapse>
         <ListItem
-          onClick={handleClick}
+          onClick={handleLeaveClick}
           className="menuList"
           sx={{
             padding: "0.3rem 0 !important",
@@ -317,14 +275,9 @@ const Sidebar = () => {
         >
           <img src={leave} alt="leave" />
           <div
-            style={{
-              width: "100%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              paddingRight: "0.3rem",
-            }}
+            className="leave-menu-box"
           >
+            
             Leave
             {leaveOpen ? (
               <ExpandLessIcon sx={{ fontSize: "1.2rem" }} />
@@ -351,7 +304,7 @@ const Sidebar = () => {
               to="/leave/leave-apply"
               className={({ isActive }) => (isActive ? "active-list" : "")}
             >
-              <ListItem className="menuList" style={{ margin: "0rem" }}>
+              <ListItem className="menuList" >
                 Leave Apply
               </ListItem>
             </NavLink>
@@ -359,7 +312,7 @@ const Sidebar = () => {
               to="/leave/leave-balances"
               className={({ isActive }) => (isActive ? "active-list" : "")}
             >
-              <ListItem className="menuList" style={{ margin: "0rem" }}>
+              <ListItem className="menuList" >
                 Leave Balances
               </ListItem>
             </NavLink>
@@ -367,7 +320,7 @@ const Sidebar = () => {
               to="/leave/leave-calendar"
               className={({ isActive }) => (isActive ? "active-list" : "")}
             >
-              <ListItem className="menuList" style={{ margin: "0rem" }}>
+              <ListItem className="menuList" >
                 Leave Calendar
               </ListItem>
             </NavLink>
@@ -375,7 +328,7 @@ const Sidebar = () => {
               to="/leave/holiday-calendar"
               className={({ isActive }) => (isActive ? "active-list" : "")}
             >
-              <ListItem className="menuList" style={{ margin: "0rem" }}>
+              <ListItem className="menuList" >
                 Holiday Calendar
               </ListItem>
             </NavLink>
@@ -418,10 +371,6 @@ const Sidebar = () => {
           </ListItem>
         </NavLink>
       </List>
-
-      {/* <IconButton className={classes.settingsButton}>
-        <SettingsIcon />
-      </IconButton> */}
     </Drawer>
   );
 };

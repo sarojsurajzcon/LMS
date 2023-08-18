@@ -16,7 +16,9 @@ import ArrowBackIosNewOutlinedIcon from "@mui/icons-material/ArrowBackIosNewOutl
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleSidebar } from "../../Redux/commonReducer";
+import "./Navbar.css";
 
+// Custom styles using makeStyles
 const useStyles = makeStyles((theme) => ({
   customIcon: {
     margin: "0rem !important",
@@ -66,11 +68,13 @@ const Navbar = () => {
     .join(" ")
     .trim();
 
+  // Function to handle opening the Quick Links menu
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  // Function to handle closing the Quick Links menu
   const handleMenuClose = () => {
     setAnchorEl(null);
     setIsDropdownOpen(false);
@@ -92,6 +96,7 @@ const Navbar = () => {
     },
   };
 
+  // Function to handle sidebar toggling
   const handleToggleSidebar = () => {
     dispatch(toggleSidebar());
   };
@@ -110,45 +115,17 @@ const Navbar = () => {
           </IconButton>
         )}
         {isSidebarOpen && (
-          <span
-            onClick={handleToggleSidebar}
-            style={{
-              backgroundColor: "#5473e3",
-              padding: "0.05rem 0.35rem",
-              color: "white",
-              position: "absolute",
-              zIndex: 10000,
-              marginLeft: "-2.5rem",
-              borderRadius: "4px",
-              cursor: "pointer",
-            }}
-          >
+          <span onClick={handleToggleSidebar} className="sidebarBackIcon">
             <ArrowBackIosNewOutlinedIcon
               style={{ fontSize: "1.2rem", marginTop: "5px" }}
             />
           </span>
         )}
-        <Typography
-          variant="h6"
-          style={{
-            flexGrow: 1,
-            fontSize: "1rem",
-            color: "rgba(23,30,37)",
-            fontWeight: 400,
-          }}
-        >
+        <Typography variant="h6" id="title">
           {uniqueTitle}
         </Typography>
         <div>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              cursor: "pointer",
-              margin: "0 0.65rem",
-            }}
-            onClick={handleMenuOpen}
-          >
+          <div className="quick-link" onClick={handleMenuOpen}>
             <Typography
               style={{ fontSize: "0.87rem", opacity: "0.9" }}
               variant="body1"

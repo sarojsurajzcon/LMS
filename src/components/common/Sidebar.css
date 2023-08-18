@@ -1,3 +1,69 @@
+/* Assuming you have a class for the root/container element */
+.drawerPaper {
+  width: 200px;
+}
+.logo-box {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 1rem;
+}
+
+.profile-box {
+  margin: 0.5rem;
+  margin-right: 0.9rem;
+}
+
+.profile-view-info {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(59, 130, 246, 0.95);
+}
+
+.setting-icon {
+  opacity: 0.8;
+  transform: rotate(30deg);
+}
+
+.todo-list-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 0.3rem;
+}
+
+.salary-list-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 0.3rem;
+}
+
+.leave-menu-box{
+  width: 100%;
+  padding: 0;
+  font-size: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profileSection {
+  display: flex;
+  padding: 0 0 0 1rem;
+  align-items: center;
+}
+
+.avatar {
+  font-size: 2.5rem;
+  border-radius: 100%;
+}
+
+.settingsButton {
+  margin-left: auto;
+}
+
 .menuList {
   font-size: 0.75rem;
   padding: 0.7rem 0 !important;

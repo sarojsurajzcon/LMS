@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import "./ImageCarousel.css";
-
 import Image1 from "../../assets/1.svg";
 import Image2 from "../../assets/2.svg";
 import Image3 from "../../assets/3.svg";
 import Image4 from "../../assets/4.svg";
 import Image5 from "../../assets/5.svg";
+import "./ImageCarousel.css";
 
+// Array of images and their captions for the carousel
 const images = [
   {
     src: Image1,
@@ -40,12 +40,14 @@ const ImageCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+    // Interval to change the current index of the displayed image
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
     }, 4000);
 
+        // Clean up the interval when the component unmounts
     return () => clearInterval(interval);
   }, []);
 
@@ -88,7 +90,6 @@ const ImageCarousel = () => {
             {images[currentIndex].subCaption}
           </motion.p>
         </AnimatePresence>
-
         <div className="dots">
           {images.map((_, index) => (
             <span

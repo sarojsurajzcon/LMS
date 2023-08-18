@@ -5,6 +5,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { NavLink } from "react-router-dom";
 import "./LeaveHistory.css";
 
 const style = makeStyles({
@@ -20,7 +21,6 @@ export default function LeaveHistory() {
     <div className="leave-history-container">
       <Accordion className="accordion-container">
         <AccordionSummary
-          // className={classes.summaryContainer}
           expandIcon={
             <ExpandMoreIcon
               sx={{
@@ -33,13 +33,7 @@ export default function LeaveHistory() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <section
-            style={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "space-between",
-            }}
-          >
+          <section className="summary-box">
             <div className="title-box">
               <Typography className="accordion-title">Category</Typography>
               <Typography className="accordion-subtitle">Leave</Typography>
@@ -82,21 +76,19 @@ export default function LeaveHistory() {
               </p>
             </section>
           </section>
-          <section
-            style={{
-              padding: "0.5rem 1.5rem",
-              display: "flex",
-              justifyContent: "space-between",
-            }}
-          >
+          <section className="view-detail-box">
             <div>
-              <p style={{ fontSize: "12px", color: "#7f8fa4" }}>Applied on</p>
-              <p style={{ fontSize: "14px", fontWeight: "500" }}>
+              <Typography style={{ fontSize: "12px", color: "#7f8fa4" }}>
+                Applied on
+              </Typography>
+              <Typography style={{ fontSize: "14px", fontWeight: "500" }}>
                 31 jul, 2023
-              </p>
+              </Typography>
             </div>
             <div>
-              <p style={{ color: "#24a7f8", fontSize: "14px" }}>View Details</p>
+              <NavLink to="/leave/leave-apply/history/view-details">
+                <p id="view-detail-link">View Details</p>
+              </NavLink>
             </div>
           </section>
         </AccordionDetails>

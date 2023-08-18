@@ -1,0 +1,36 @@
+.leave-menu-list {
+  font-size: 0.73rem;
+  padding: 0.3rem 0;
+  padding-left: 1.65rem;
+  margin: 0.1rem 0;
+  cursor: pointer;
+  opacity: 0.69;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.leave-menu-list:hover {
+  opacity: 1;
+}
+
+.leave-nav {
+  display: flex;
+  flex-direction: column;
+  width: 18%;
+  margin-top: -0.5rem;
+}
+
+.leave-nav .active {
+  color: #34414c;
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 1;
+}
+.leave-nav .active::before {
+  content: "";
+  position: absolute;
+  top: 1;
+  left: 10px;
+  height: 60%;
+  width: 2px; /* Adjust the width as needed */
+  background-color: #34414c; /* Adjust the color as needed */
+}

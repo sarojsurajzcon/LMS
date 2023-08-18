@@ -1,38 +1,23 @@
-// reducers/authSlice.js
+// reducers/commonSlice.js
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-// // Async thunk for logging in
-// export const loginAsync = createAsyncThunk("auth/loginAsync", async (data) => {
-//   return null;
-// });
-
+// Create a Redux slice for common state
 const commonSlice = createSlice({
-  name: "common",
+  name: "common", // Slice name
   initialState: {
-    isSidebarOpen: true,
+    isSidebarOpen: true, // Initial state for sidebar visibility
   },
   reducers: {
+    // Reducer function to toggle the sidebar visibility
     toggleSidebar: (state, action) => {
+      // Toggle the value of isSidebarOpen
       state.isSidebarOpen = !state.isSidebarOpen;
     },
   },
-//   extraReducers: (builder) => {
-//     builder
-//       .addCase(loginAsync.pending, (state) => {
-//         state.loading = true;
-//         state.error = null;
-//       })
-//       .addCase(loginAsync.fulfilled, (state, action) => {
-//         state.loading = false;
-//         state.data = action.payload;
-//       })
-//       .addCase(loginAsync.rejected, (state, action) => {
-//         state.loading = false;
-//         state.error = action.error.message;
-//       });
-//   },
 });
 
+// Export the action creator for toggling the sidebar
 export const { toggleSidebar } = commonSlice.actions;
 
+// Export the reducer for integration into the Redux store
 export default commonSlice.reducer;

@@ -1,0 +1,24 @@
+.sidebarBackIcon {
+  background-color: #5473e3;
+  padding: 0.05rem 0.35rem;
+  color: white;
+  position: absolute;
+  z-index: 10000;
+  margin-left: -2.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#title {
+  flex-grow: 1;
+  font-size: 1rem;
+  color: rgba(23, 30, 37);
+  font-weight: 400;
+}
+
+.quick-link {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 0.65rem;
+}

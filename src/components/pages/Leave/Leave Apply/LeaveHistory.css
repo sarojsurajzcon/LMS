@@ -10,6 +10,11 @@
   flex-direction: column;
 }
 
+.summary-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
 .accordion-container {
   box-shadow: none;
   outline: 1px solid #d8dfe7;
@@ -56,4 +61,17 @@
 
 .details-box p:nth-child(2) span:first-child {
   margin-right: 20px;
+}
+
+.view-detail-box {
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#view-detail-link {
+  color: #24a7f8;
+  font-size: 14px;
+  cursor: pointer;
 }
