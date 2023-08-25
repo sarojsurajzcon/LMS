@@ -1,4 +1,3 @@
-import React from "react";
 import appLoader from "../../assets/appLoader.gif";
 
 // Styles for the container that holds the GIF

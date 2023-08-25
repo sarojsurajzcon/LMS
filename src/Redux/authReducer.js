@@ -2,7 +2,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 // Async thunk for logging in
-export const loginAsync = createAsyncThunk("auth/loginAsync", async (data) => {
+export const loginAsync = createAsyncThunk("auth/loginAsync", async () => {
   // Perform an async login operation, e.g., API call
   return null; // Placeholder; replace with actual login result
 });

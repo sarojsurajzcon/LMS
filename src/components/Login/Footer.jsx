@@ -1,4 +1,3 @@
-import React from "react";
 import "./Footer.css";
 
 const Footer = () => {
@@ -7,13 +6,13 @@ const Footer = () => {
       <span>© Greytip Software Pvt. Ltd |</span>
       <a
         href="https://zcon.greythr.com/v2/static-content/privacy-policy"
-        target="_blank"
+        target="_blank" rel="noreferrer"
       >
         Privacy Policy
       </a>{" "}
       <a
         href="https://zcon.greythr.com/v2/static-content/terms-of-use"
-        target="_blank"
+        target="_blank" rel="noreferrer"
       >
         | Terms of Service
       </a>

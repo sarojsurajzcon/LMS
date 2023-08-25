@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {Button, Autocomplete, TextField, Box} from "@mui/material";
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
 import { styled } from "@mui/material/styles";
@@ -95,7 +95,7 @@ export default function LeaveBalances() {
             <p >Balance</p>
           </div>
           <Box sx={{ flexGrow: 1, margin: "0 1rem 1rem" }}>
-            <p className="progress-p">0.5 of 3 Consumed</p>
+            <p className="progress-paragraph">0.5 of 3 Consumed</p>
             <BorderLinearProgress variant="determinate" value={20} />
           </Box>
         </div>
@@ -109,7 +109,7 @@ export default function LeaveBalances() {
             <p >Balance</p>
           </div>
           <Box sx={{ flexGrow: 1, margin: "0 1rem 1rem" }}>
-            <p className="progress-p">1 of 3 Consumed</p>
+            <p className="progress-paragraph">1 of 3 Consumed</p>
             <BorderLinearProgress variant="determinate" value={35} />
           </Box>
         </div>

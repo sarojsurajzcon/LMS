@@ -1,4 +1,3 @@
-import * as React from "react";
 import { makeStyles } from "@mui/styles";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";

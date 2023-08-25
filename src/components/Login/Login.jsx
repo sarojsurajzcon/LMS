@@ -60,7 +60,6 @@ const Login = () => {
       setError(true);
       setPara(true);
     } else {
-      console.log("login Success", formData);
       setPara(false);
       setError(false);
       setErrorMsg("");
@@ -89,7 +88,7 @@ const Login = () => {
         <header style={{ marginBottom: "0.2rem" }}>
           <img src={greyHR} alt="greyHR" width={"110px"} />
         </header>
-        <Typography className="forgot-password-p">
+        <Typography className="forgot-password-paragraph">
           {isForgotPassword
             ? `Forgot password? That's okay! Let's change it 😊`
             : "Hello there! 👋"}
@@ -100,7 +99,7 @@ const Login = () => {
         {error && (
           <Box className="error-msg-box">
             {error && showWhoopsPara && (
-              <Typography className="whoops-p">Whoops!</Typography>
+              <Typography className="whoops-paragraph">Whoops!</Typography>
             )}
             <Typography className="err-msg">{errorMsg}</Typography>
           </Box>
@@ -149,9 +148,9 @@ const Login = () => {
             <button className="submit-btn" type="submit">
               {isForgotPassword ? "Ok, got it!" : "Log in"}
             </button>
-            <Box className="forgot-p-box">
+            <Box className="forgot-paragraph-box">
               <p
-                id="forgotPassword-p"
+                id="forgotPassword-paragraph"
                 color="primary"
                 onClick={handleForgotPassword}
               >
@@ -161,9 +160,9 @@ const Login = () => {
           </>
         ) : (
           <>
-            <Box className="forgot-p-box">
+            <Box className="forgot-paragraph-box">
               <p
-                id="forgotPassword-p"
+                id="forgotPassword-paragraph"
                 color="primary"
                 onClick={handleForgotPassword}
               >
@@ -179,7 +178,7 @@ const Login = () => {
           <>
             <div className="divider">
               <hr id="hr-line" />
-              <p className="sing-in-p">Or sign in with</p>
+              <p className="sing-in-paragraph">Or sign in with</p>
             </div>
             <div className="icons">
               <div className="icon">

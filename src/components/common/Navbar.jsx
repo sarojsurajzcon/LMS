@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   AppBar,
   Toolbar,
@@ -19,7 +19,7 @@ import { toggleSidebar } from "../../Redux/commonReducer";
 import "./Navbar.css";
 
 // Custom styles using makeStyles
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   customIcon: {
     margin: "0rem !important",
     "&:hover": {
@@ -126,12 +126,14 @@ const Navbar = () => {
         </Typography>
         <div>
           <div className="quick-link" onClick={handleMenuOpen}>
-            <Typography
-              style={{ fontSize: "0.87rem", opacity: "0.9" }}
-              variant="body1"
-            >
-              Quick Links
-            </Typography>
+            <abbr title="Quick Links">
+              <Typography
+                style={{ fontSize: "0.87rem", opacity: "0.9" }}
+                variant="body1"
+              >
+                Quick Links
+              </Typography>
+            </abbr>
             <ArrowDropDownIcon style={styles.arrowIcon} />
           </div>
           <Menu
@@ -155,7 +157,7 @@ const Navbar = () => {
                 opacity: "0.5",
               }}
             >
-              Sigh! You cannot 'Quick Link' this page
+              {`Sigh! You cannot 'Quick Link' this page`}
             </MenuItem>
             <MenuItem
               sx={{
@@ -165,7 +167,7 @@ const Navbar = () => {
             >
               <a
                 href="https://ess-help.greythr.com/employee-portal"
-                target="_blank"
+                target="_blank" rel="noreferrer"
               >
                 Getting Started with greytHR
               </a>
@@ -175,13 +177,16 @@ const Navbar = () => {
         <IconButton edge="start" className={classes.customIcon} color="inherit">
           <NotificationsNoneIcon sx={{ fontSize: "1.4rem !important" }} />
         </IconButton>
+
         <IconButton
           edge="start"
           onClick={() => navigate("/login")}
           color="inherit"
           className={classes.customIcon}
         >
-          <PowerSettingsNewIcon sx={{ fontSize: "1.4rem !important" }} />
+          <abbr title="Logout">
+            <PowerSettingsNewIcon sx={{ fontSize: "1.4rem !important" }} />
+          </abbr>
         </IconButton>
       </Toolbar>
     </AppBar>

@@ -1,5 +1,5 @@
 // reducers/commonSlice.js
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 // Create a Redux slice for common state
 const commonSlice = createSlice({
@@ -9,7 +9,7 @@ const commonSlice = createSlice({
   },
   reducers: {
     // Reducer function to toggle the sidebar visibility
-    toggleSidebar: (state, action) => {
+    toggleSidebar: (state) => {
       // Toggle the value of isSidebarOpen
       state.isSidebarOpen = !state.isSidebarOpen;
     },

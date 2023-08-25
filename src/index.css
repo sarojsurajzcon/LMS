@@ -13,6 +13,11 @@ ol {
   list-style: none;
 }
 
+/* Remove abbr styles  */
+abbr{
+  text-decoration: none;
+}
+
 /* Set the base font size and line height */
 body {
   font-size: 16px;

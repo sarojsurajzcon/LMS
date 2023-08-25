@@ -1,5 +1,3 @@
-import * as React from "react";
-import { makeStyles } from "@mui/styles";
 import "./LeaveHistoryDetails.css";
 
 export default function LeaveHistoryDetails() {

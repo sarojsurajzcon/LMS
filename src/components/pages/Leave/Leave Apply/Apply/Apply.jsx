@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   Box,
-  useMediaQuery,
   TextField,
   Typography,
   InputLabel,
@@ -15,7 +14,6 @@ import {
 import { makeStyles } from "@mui/styles";
 import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import dayjs from "dayjs";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
@@ -23,7 +21,7 @@ import AttachFileIcon from "@mui/icons-material/AttachFile";
 import SideNav from "./SideNav";
 import "./Apply.css";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   date: {
     width: "100%",
   },
@@ -31,17 +29,17 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Apply() {
   const classes = useStyles();
-    // State for hiding/showing information box
+  // State for hiding/showing information box
   const [isHide, setIsHide] = React.useState(false);
 
-    // State for selected file
+  // State for selected file
   const [selectedFile, setSelectedFile] = useState(null);
 
-    // Form data state
+  // Form data state
   const [formData, setFormData] = useState({
     leaveType: "",
-    fromDate: dayjs(),
-    toDate: dayjs(),
+    fromDate: "",
+    toDate: "",
     sessions1: "",
     sessions2: "",
     contactDetails: "",
@@ -49,7 +47,7 @@ export default function Apply() {
     selectedFile: null,
   });
 
-    // Handle form data change
+  // Handle form data change
   const handleFormDataChange = (field, value) => {
     setFormData((prevFormData) => ({
       ...prevFormData,
@@ -57,19 +55,18 @@ export default function Apply() {
     }));
   };
 
-    // Handle file input change
+  // Handle file input change
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     setSelectedFile(file);
   };
 
-    // Handle form submission
+  // Handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Form Data:", formData);
   };
 
-    // Toggle information box
+  // Toggle information box
   const toggleInfo = () => {
     setIsHide((prev) => !prev);
   };
@@ -108,10 +105,10 @@ export default function Apply() {
               <section className="input-div-container">
                 <div className="input-div">
                   <InputLabel>
-                    Leave Type{" "}
+                    Leave Type
                     <Typography component="span" fontSize="small" color="error">
                       *
-                    </Typography>{" "}
+                    </Typography>
                   </InputLabel>
                   <FormControl fullWidth>
                     <Select
@@ -120,7 +117,11 @@ export default function Apply() {
                       onChange={(e) =>
                         handleFormDataChange("leaveType", e.target.value)
                       }
+                      displayEmpty
                     >
+                      <MenuItem value="" disabled style={{ display: "none" }}>
+                        Select type
+                      </MenuItem>
                       <MenuItem value={"Loss Of Pay"}>Loss Of Pay</MenuItem>
                       <MenuItem value={"Emergency Leave"}>
                         Emergency Leave
@@ -137,15 +138,19 @@ export default function Apply() {
                       *
                     </Typography>{" "}
                   </InputLabel>
-                  <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DatePicker
-                      className={classes.date}
-                      value={formData.fromDate}
-                      onChange={(newValue) =>
-                        handleFormDataChange("fromDate", newValue)
-                      }
-                    />
-                  </LocalizationProvider>
+                  <FormControl fullWidth>
+                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                      <DatePicker
+                        className={classes.date}
+                        value={formData.fromDate}
+                        placeholder="Select date"
+                        onChange={(newValue) =>
+                          handleFormDataChange("fromDate", newValue)
+                        }
+                       
+                      />
+                    </LocalizationProvider>
+                  </FormControl>
                   <InputLabel>
                     To date{" "}
                     <Typography component="span" fontSize="small" color="error">
@@ -172,12 +177,14 @@ export default function Apply() {
                   <FormControl fullWidth>
                     <Select
                       className="select-input"
-                      value={formData.sessions1}
+                      value={formData.sessions1 || "Session 1"}
                       onChange={(e) =>
                         handleFormDataChange("sessions1", e.target.value)
                       }
                     >
-                      <MenuItem value={"Session 1"}>Session 1</MenuItem>
+                      <MenuItem defaultChecked value={"Session 1"}>
+                        Session 1
+                      </MenuItem>
                       <MenuItem value={"Session 2"}>Session 2</MenuItem>
                     </Select>
                   </FormControl>
@@ -190,7 +197,7 @@ export default function Apply() {
                   <FormControl fullWidth>
                     <Select
                       className="select-input"
-                      value={formData.sessions2}
+                      value={formData.sessions2 || "Session 2"}
                       onChange={(e) =>
                         handleFormDataChange("sessions2", e.target.value)
                       }
@@ -225,7 +232,7 @@ export default function Apply() {
               </div>
               <br />
               <div className="addIconBox">
-                <p className="cc-p">CC to </p>
+                <p className="cc-paragraph">CC to </p>
                 <div className="d-flex align-item-center">
                   <AddCircleOutlineIcon
                     sx={{

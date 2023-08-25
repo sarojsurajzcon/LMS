@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Button } from "@mui/material";
 import "./LeaveApply.css";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
@@ -13,7 +13,7 @@ export default function LeaveApply() {
     if (location?.pathname == "/leave/leave-apply") {
       navigate("/leave/leave-apply/apply");
     }
-  }, []);
+  }, [location?.pathname, navigate]);
 
   return (
     <>

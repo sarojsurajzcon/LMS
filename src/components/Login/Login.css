@@ -86,7 +86,7 @@ input::placeholder {
   margin: 1rem !important;
   margin-top: 2rem !important;
 }
-.forgot-password-p {
+.forgot-password-paragraph {
   color: rgba(57, 70, 87, 0.85);
   font-size: 21px;
   font-weight: 800;
@@ -108,7 +108,7 @@ input::placeholder {
   opacity: 0.9;
 }
 
-.whoops-p {
+.whoops-paragraph {
   margin-bottom: 0.5rem;
   color: black;
   font-weight: 600;
@@ -128,14 +128,14 @@ input::placeholder {
   font-weight: 600;
 }
 
-#forgotPassword-p {
+#forgotPassword-paragraph {
   margin-bottom: 1rem;
   color: #388ce0;
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
 }
-#forgotPassword-p:hover {
+#forgotPassword-paragraph:hover {
   text-decoration: underline;
 }
 
@@ -146,7 +146,7 @@ input::placeholder {
   margin-bottom: -10px;
 }
 
-.sing-in-p {
+.sing-in-paragraph {
   background-color: white;
   position: relative;
   z-index: 1;
@@ -156,7 +156,7 @@ input::placeholder {
   font-size: 11px;
 }
 
-.forgot-p-box {
+.forgot-paragraph-box {
   width: 100%;
   display: flex;
   justify-content: flex-end;

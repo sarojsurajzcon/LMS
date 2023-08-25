@@ -1,4 +1,3 @@
-import React from "react";
 import RoutePath from "./Routes/RoutePath";
 
 const App = () => {

@@ -1,5 +1,4 @@
-import React from "react";
-import { makeStyles } from "@mui/styles";
+import React, { makeStyles } from "@mui/styles";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
@@ -10,7 +9,7 @@ import Collapse from "@mui/material/Collapse";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import PersonIcon from "@mui/icons-material/Person";
-import { Link, NavLink } from "react-router-dom"; // If you're using React Router
+import { Link, NavLink } from "react-router-dom"; 
 import home from "../../assets/home.svg";
 import feeds from "../../assets/feeds.svg";
 import todo from "../../assets/todo.svg";
@@ -23,7 +22,7 @@ import flow from "../../assets/flow.svg";
 import zcon from "../../assets/zcon.png";
 import "./Sidebar.css";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   drawer: {
     width: 200,
     flexShrink: 0,
