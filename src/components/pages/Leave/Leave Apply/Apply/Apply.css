@@ -2,7 +2,7 @@
   outline: 1px solid #92a5bb;
   width: 70%;
   margin: 0 1rem;
-  background-color: white;
+  background-color: #FFFFFF;
   padding: 0.8rem 1.2rem;
 }
 .info-box {
@@ -142,7 +142,7 @@
 }
 .submit-action-container button {
   padding: 0.2rem 2rem;
-  background-color: white;
+  background-color: #FFFFFF;
   text-transform: none;
   color: rgb(193, 191, 191);
   font-size: 13px !important;

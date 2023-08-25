@@ -83,7 +83,7 @@
   display: flex;
   width: 95%;
   flex-direction: column;
-  background-color: white;
+  background-color: #FFFFFF;
   border: 1px solid #d0c5c5;
   margin: 0 1.5rem;
   padding: 1rem 1.5rem;
@@ -114,7 +114,7 @@
   height: 100%;
   min-height: 300px;
   flex-direction: column;
-  background-color: white;
+  background-color: #FFFFFF;
   border: 1px solid #d0c5c5;
   margin: 1.5rem 0.5rem;
   padding: 1rem 1.5rem;

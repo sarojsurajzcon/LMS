@@ -321,7 +321,7 @@ export default function Apply() {
                   textDecoration: "none",
                   borderRadius: "5px",
                   backgroundColor: "#24a7f8 !important",
-                  color: "white !important",
+                  color: "#FFFFFF !important",
                 }}
                 variant="contained"
               >

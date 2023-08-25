@@ -22,7 +22,7 @@ input::placeholder {
   padding: 0.6rem;
   border: none;
   outline: none;
-  color: white;
+  color: #FFFFFF;
   border-radius: 5px;
   font-weight: 600;
   font-size: 13px;
@@ -75,7 +75,7 @@ input::placeholder {
 .login-form {
   width: 100%;
   max-width: 380px;
-  background-color: white;
+  background-color: #FFFFFF;
   padding: 1.6rem;
   display: flex;
   flex-direction: column;
@@ -110,7 +110,7 @@ input::placeholder {
 
 .whoops-paragraph {
   margin-bottom: 0.5rem;
-  color: black;
+  color: #000000;
   font-weight: 600;
   font-size: 12px;
 }
@@ -147,7 +147,7 @@ input::placeholder {
 }
 
 .sing-in-paragraph {
-  background-color: white;
+  background-color: #FFFFFF;
   position: relative;
   z-index: 1;
   width: fit-content;

@@ -35,7 +35,7 @@ const useStyles = makeStyles(() => ({
   hambergurIcon: {
     background: "#5473e3 !important",
     padding: "0.25rem !important",
-    color: "white !important",
+    color: "#FFFFFF !important",
     margin: "0.6rem !important",
     borderRadius: "5px !important",
     "&:hover": {
@@ -100,6 +100,12 @@ const Navbar = () => {
   const handleToggleSidebar = () => {
     dispatch(toggleSidebar());
   };
+
+
+  const handleLogout = ()=>{
+    navigate("/login")
+    window.location.reload()
+  }
 
   return (
     <AppBar position="fixed" style={styles.appBar}>
@@ -180,7 +186,7 @@ const Navbar = () => {
 
         <IconButton
           edge="start"
-          onClick={() => navigate("/login")}
+          onClick={handleLogout}
           color="inherit"
           className={classes.customIcon}
         >

@@ -1,7 +1,7 @@
 .sidebarBackIcon {
   background-color: #5473e3;
   padding: 0.05rem 0.35rem;
-  color: white;
+  color: #FFFFFF;
   position: absolute;
   z-index: 10000;
   margin-left: -2.5rem;
@@ -12,7 +12,7 @@
 #title {
   flex-grow: 1;
   font-size: 1rem;
-  color: rgba(23, 30, 37);
+  color: #000000;
   font-weight: 400;
 }
 
